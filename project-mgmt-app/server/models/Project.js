@@ -15,7 +15,7 @@ const ProjectSchema = new mongoose.Schema({
   },
   clientId: {
     //when creating a new collection, an objectId is automatically assigned
-    type: mongoose.Mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     //relate to other model,
     ref: 'Client',
   }
