@@ -1,15 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
-
-const GET_CLIENTS = gql`
-  query getClients {
-    clients {
-      id
-      name
-      email
-      phone
-    }
-  }
-`;
+import ClientRow from "./ClientRow";
+import { GET_CLIENTS } from "../queries/clientQueries";
 
 export default function Clients() {
 
@@ -19,6 +10,24 @@ export default function Clients() {
   if (error) return <p>Something Went Wrong</p>;
 
   return (
-    <div>Clients</div>
+    <>
+      {!loading && !error && (
+        <table className="table table-hover mt-3">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Delete button here</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.clients.map(client => (
+              <ClientRow key={client.id} client={client} />
+            ))}
+          </tbody>
+        </table>
+      )}
+    </>
   );
 }
