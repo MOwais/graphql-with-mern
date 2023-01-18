@@ -1,12 +1,13 @@
 import { gql, useQuery } from "@apollo/client";
 import ClientRow from "./ClientRow";
 import { GET_CLIENTS } from "../queries/clientQueries";
+import Spinner from './Spinner';
 
 export default function Clients() {
 
   const { loading, error, data } = useQuery(GET_CLIENTS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
   if (error) return <p>Something Went Wrong</p>;
 
   return (
@@ -18,7 +19,7 @@ export default function Clients() {
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Delete button here</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
