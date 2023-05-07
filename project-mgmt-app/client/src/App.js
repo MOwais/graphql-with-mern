@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Switch } from "react-router-dom
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Project from "./pages/Project";
 
 //for warning - invariant.ts:42 Cache data may be lost when replacing the clients field of a Query object.
 //To address this problem (which is not a bug in Apollo Client), define a custom merge function for the Query.clients field, so InMemoryCache can safely merge these objects:
@@ -40,6 +41,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />}/>
+              <Route path="/project/:id" element={<Project />}/>
               <Route path="*" element={<NotFound />}/>
             </Routes>
           </div>
