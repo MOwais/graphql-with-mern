@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { FaEnvelope, FaIdBadge, FaPhone } from "react-icons/fa";
 
 export default function ClientInfo({ client }) {
@@ -17,5 +17,5 @@ export default function ClientInfo({ client }) {
         </li>
       </ul>
     </>
-  )
+  );
 }

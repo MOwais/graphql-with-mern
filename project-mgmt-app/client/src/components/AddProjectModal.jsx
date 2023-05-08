@@ -49,7 +49,7 @@ export default function AddProjectModal() {
   if (loading) return null;
   if (error) return "Something went wrong";
 
-  console.log("CLIENTS", data.clients)
+  console.log("CLIENTS", data.clients);
   return (
     <>
       {!loading && !error && (
@@ -129,11 +129,11 @@ export default function AddProjectModal() {
                         onChange={(e) => setClientId(e.target.value)}
                       >
                         <option value="">Select Client</option>
-                        { data.clients.map((client) =>  
+                        {data.clients.map((client) => (
                           <option key={client.id} value={client.id}>
                             {client.name}
                           </option>
-                        )}
+                        ))}
                       </select>
                     </div>
                     <button

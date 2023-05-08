@@ -1,14 +1,14 @@
 import { gql } from "@apollo/client";
 
 const GET_PROJECTS = gql`
-  query getProjects { 
-    projects { 
+  query getProjects {
+    projects {
       id
       name
       status
     }
   }
-`
+`;
 
 const GET_PROJECT = gql`
   query getProjects($id: ID!) {
@@ -17,7 +17,7 @@ const GET_PROJECT = gql`
       name
       description
       status
-      client { 
+      client {
         id
         name
         email
@@ -25,6 +25,6 @@ const GET_PROJECT = gql`
       }
     }
   }
-`
+`;
 
 export { GET_PROJECT, GET_PROJECTS };
